@@ -1,0 +1,64 @@
+    .btn-nav {
+      background: #f2f4f5;
+      border: 1px solid rgba(0,0,0,.08);
+      border-radius: 999px;
+      padding: .45rem .9rem;
+      font-weight: 600;
+      color: #1c1f23;
+    }
+    .btn-nav:hover { background: #e9eef0; }
+
+    .btn-golf {
+      background: #1f7a4f;
+      border-color: #1f7a4f;
+      color: white;
+      font-weight: 700;
+    }
+    .btn-golf:hover { filter: brightness(.95); }
+
+    .weather-chip {
+      background: #f7faf8;
+      border: 1px solid rgba(0,0,0,.08);
+      min-width: 210px;
+    }
+
+    .logo-slot {
+      //width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      //border: 1px dashed rgba(0,0,0,.15);
+      background: #fafafa;
+    }
+
+    .weather-chip {
+      background: #f7faf8;
+      border: 1px solid rgba(0,0,0,.08);
+      min-width: 200px;
+    }
+
+    .dot-green {
+      width: 10px;
+      height: 10px;
+      border-radius: 99px;
+      background: #1f7a4f;
+      box-shadow: 0 0 0 4px rgba(31,122,79,.12);
+    }
+
+    /* Professional Golf Nav Pills */
+    .nav-pill {
+      font-weight: 600;
+      border-radius: 999px;
+      padding: .45rem 1rem;
+      transition: all .2s ease;
+    }
+
+    .nav-pill:hover {
+      background: rgba(31,122,79,.08);
+      color: #1f7a4f;
+    }
+
+    .nav-pill.active {
+      background: #1f7a4f;
+      color: white !important;
+    }
+

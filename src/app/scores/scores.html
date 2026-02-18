@@ -1,0 +1,98 @@
+<section class="card shadow-sm border-0">
+            <div class="card-body p-4">
+              <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3">
+                <div>
+                  <h2 class="h5 fw-semibold mb-0">Scores</h2>
+                  <!-- <div class="text-muted small">Pulled from your <code>players</code> table</div> -->
+                </div>
+
+                <div class="d-flex align-items-center gap-2">
+                  <button class="btn btn-outline-secondary btn-sm" (click)="loadScores()" [disabled]="loading">
+                    {{ loading ? 'Loading...' : 'Refresh' }}
+                  </button>
+                </div>
+              </div>
+
+              <div *ngIf="error" class="alert alert-danger mb-3">
+                {{ error }}
+              </div>
+
+              <div class="table-responsive">
+                <table class="table align-middle mb-0">
+                  <thead class="table-light">
+                    <tr>
+                      <!-- <th style="width: 90px;">ID</th> -->
+                      <th style="width: 90px;">Name</th>
+                      <th style="width: 140px;">Handicap</th>
+                      <th style="width: 50px;">Week 1</th>
+                      <th style="width: 50px;">Week 2</th>
+                      <th style="width: 50px;">Week 3</th>
+                      <th style="width: 50px;">Week 4</th>
+                      <th style="width: 50px;">Week 5</th>
+                      <th style="width: 50px;">Week 6</th>
+                      <th style="width: 50px;">Week 7</th>
+                      <th style="width: 50px;">Week 8</th>
+                      <th style="width: 50px;">Week 9</th>
+                      <th style="width: 50px;">Week 10</th>
+                      <th style="width: 50px;">Week 11</th>
+                      <th style="width: 50px;">Week 12</th>
+                      <th style="width: 50px;">Week 13</th>
+                      <th style="width: 50px;">Week 14</th>
+                      <th style="width: 50px;">Week 15</th>
+                      <th style="width: 50px;">Week 16</th>
+                      <th style="width: 50px;">Week 17</th>
+                      <th style="width: 50px;">Week 18</th>
+                      <th style="width: 50px;">Week 19</th>
+                      <th style="width: 50px;">Week 20</th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    <tr *ngIf="loading">
+                      <td colspan="4" class="py-4 text-center text-muted">Loading players…</td>
+                    </tr>
+
+                    <tr *ngIf="!loading && scores.length === 0">
+                      <td colspan="4" class="py-4 text-center text-muted">No scores found.</td>
+                    </tr>
+
+                    <tr *ngFor="let s of scores">
+                      <td>
+                        <div class="fw-semibold">{{ s.full_name }}</div>
+                      </td>
+                      <td>
+                        <span class="badge text-bg-success-subtle border badge-hcp">
+                          {{ formatHandicap(s.handicap) }}
+                        </span>
+                      </td>
+                        <td>{{ s.Week1 || '—' }}</td>
+                        <td>{{ s.Week2 || '—' }}</td>
+                        <td>{{ s.Week3 || '—' }}</td>
+                        <td>{{ s.Week4 || '—' }}</td>
+                        <td>{{ s.Week5 || '—' }}</td>
+                        <td>{{ s.Week6 || '—' }}</td>
+                        <td>{{ s.Week7 || '—' }}</td>  
+                        <td>{{ s.Week8 || '—' }}</td>
+                        <td>{{ s.Week9 || '—' }}</td>
+                        <td>{{ s.Week10 || '—' }}</td>
+                        <td>{{ s.Week11 || '—' }}</td>
+                        <td>{{ s.Week12 || '—' }}</td>
+                        <td>{{ s.Week13 || '—' }}</td>
+                        <td>{{ s.Week14 || '—' }}</td> 
+                        <td>{{ s.Week15 || '—' }}</td>
+                        <td>{{ s.Week16 || '—' }}</td> 
+                        <td>{{ s.Week17 || '—' }}</td>
+                        <td>{{ s.Week18 || '—' }}</td>     
+                        <td>{{ s.Week19 || '—' }}</td>
+                        <td>{{ s.Week20 || '—' }}</td>
+
+
+
+                      <!-- <td class="text-muted small">{{ p.created_at || '—' }}</td> -->
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+            </div>
+          </section>

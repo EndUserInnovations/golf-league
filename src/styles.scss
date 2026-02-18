@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+ //@import "bootstrap/scss/bootstrap";
+
+html, body {
+  height: 100%; // Ensure the body takes the full height of the viewport
+  margin: 0; // Remove default margin
+}
+
+body {
+  display: flex;
+  flex-direction: column; // Stack elements vertically
+}
+
+main {
+  flex: 1; // Allow the main content to grow and push the footer down
+}
+
+footer {
+  background-color: #f8f9fa; // Optional: Add a background color
+  padding: 1rem; // Optional: Add padding
+  text-align: center; // Optional: Center the text
+}

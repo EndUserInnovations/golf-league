@@ -1,0 +1,60 @@
+<!-- Players Table -->
+          <section class="card shadow-sm border-0">
+            <div class="card-body p-4">
+              <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3">
+                <div>
+                  <h2 class="h5 fw-semibold mb-0">Players</h2>
+                  <!-- <div class="text-muted small">Pulled from your <code>players</code> table</div> -->
+                </div>
+
+                <div class="d-flex align-items-center gap-2">
+                  <button class="btn btn-outline-secondary btn-sm" (click)="loadPlayers()" [disabled]="loading">
+                    {{ loading ? 'Loading...' : 'Refresh' }}
+                  </button>
+                </div>
+              </div>
+
+              <div *ngIf="error" class="alert alert-danger mb-3">
+                {{ error }}
+              </div>
+
+              <div class="table-responsive">
+                <table class="table align-middle mb-0">
+                  <thead class="table-light">
+                    <tr>
+                      <!-- <th style="width: 90px;">ID</th> -->
+                      <th>Team ID</th>
+                      <th>Player</th>
+                      <th style="width: 140px;">Handicap</th>
+                      <!-- <th style="width: 220px;">Created</th> -->
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    <tr *ngIf="loading">
+                      <td colspan="4" class="py-4 text-center text-muted">Loading players…</td>
+                    </tr>
+
+                    <tr *ngIf="!loading && players.length === 0">
+                      <td colspan="4" class="py-4 text-center text-muted">No players found.</td>
+                    </tr>
+
+                    <tr *ngFor="let p of players">
+                      <!-- <td class="text-muted">{{ p.id }}</td> -->
+                      <td class="text-muted">{{ p.team_id || '—' }}</td>
+                      <td>
+                        <div class="fw-semibold">{{ p.last_name }}, {{ p.first_name }}</div>
+                      </td>
+                      <td>
+                        <span class="badge text-bg-success-subtle border badge-hcp">
+                          {{ formatHandicap(p.handicap) }}
+                        </span>
+                      </td>
+                      <!-- <td class="text-muted small">{{ p.created_at || '—' }}</td> -->
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+            </div>
+          </section>
