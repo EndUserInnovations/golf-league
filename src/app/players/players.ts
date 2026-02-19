@@ -48,4 +48,11 @@ export class Players {
     const n = typeof h === 'string' ? Number(h) : h;
     return Number.isFinite(n) ? n.toFixed(1) : String(h);
   }
+
+  formatHandicapRounded(h: Player['handicap']): string {
+      if (h === null || h === undefined || h === '') return '—';
+      const n = typeof h === 'string' ? Number(h) : h;
+      return Number.isFinite(n) ? Math.round(n).toString() : String(h);
+    }
+  
 }

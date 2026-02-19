@@ -4,6 +4,7 @@ import { environment } from '../../environments/environment';
 import { Observable } from 'rxjs';
 
 export interface Score {
+  team_id: number | null;
   full_name: string;
   handicap: number | string | null;
   Week1: number | null;

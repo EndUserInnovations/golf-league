@@ -19,31 +19,31 @@
 
               <div class="table-responsive">
                 <table class="table align-middle mb-0">
-                  <thead class="table-light">
+                  <thead class="table-light text-center">
                     <tr>
-                      <!-- <th style="width: 90px;">ID</th> -->
-                      <th style="width: 90px;">Name</th>
-                      <th style="width: 140px;">Handicap</th>
-                      <th style="width: 50px;">Week 1</th>
-                      <th style="width: 50px;">Week 2</th>
-                      <th style="width: 50px;">Week 3</th>
-                      <th style="width: 50px;">Week 4</th>
-                      <th style="width: 50px;">Week 5</th>
-                      <th style="width: 50px;">Week 6</th>
-                      <th style="width: 50px;">Week 7</th>
-                      <th style="width: 50px;">Week 8</th>
-                      <th style="width: 50px;">Week 9</th>
-                      <th style="width: 50px;">Week 10</th>
-                      <th style="width: 50px;">Week 11</th>
-                      <th style="width: 50px;">Week 12</th>
-                      <th style="width: 50px;">Week 13</th>
-                      <th style="width: 50px;">Week 14</th>
-                      <th style="width: 50px;">Week 15</th>
-                      <th style="width: 50px;">Week 16</th>
-                      <th style="width: 50px;">Week 17</th>
-                      <th style="width: 50px;">Week 18</th>
-                      <th style="width: 50px;">Week 19</th>
-                      <th style="width: 50px;">Week 20</th>
+                      <th>Team Id</th>
+                      <th class="w-auto">Name</th>
+                      <th>Handicap</th>
+                      <th>Week 1</th>
+                      <th>Week 2</th>
+                      <th>Week 3</th>
+                      <th>Week 4</th>
+                      <th>Week 5</th>
+                      <th>Week 6</th>
+                      <th>Week 7</th>
+                      <th>Week 8</th>
+                      <th>Week 9</th>
+                      <th>Week 10</th>
+                      <th>Week 11</th>
+                      <th>Week 12</th>
+                      <th>Week 13</th>
+                      <th>Week 14</th>
+                      <th>Week 15</th>
+                      <th>Week 16</th>
+                      <th>Week 17</th>
+                      <th>Week 18</th>
+                      <th>Week 19</th>
+                      <th>Week 20</th>
                     </tr>
                   </thead>
 
@@ -57,12 +57,13 @@
                     </tr>
 
                     <tr *ngFor="let s of scores">
-                      <td>
+                      <td>{{ s.team_id }}</td>
+                      <td class="text-start text-nowrap">
                         <div class="fw-semibold">{{ s.full_name }}</div>
                       </td>
                       <td>
                         <span class="badge text-bg-success-subtle border badge-hcp">
-                          {{ formatHandicap(s.handicap) }}
+                          {{ formatHandicapRounded(s.handicap) }}
                         </span>
                       </td>
                         <td>{{ s.Week1 || '—' }}</td>
